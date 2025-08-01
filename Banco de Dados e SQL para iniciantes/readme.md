@@ -42,12 +42,12 @@ A chave estrangeira possibilita que as tabelas possuam relacionamento, e essa ch
 <br/>
 
 ### Exemplo
-- cliente
+### CLIENTE
 <br/>  
 | id    |    nome     |     email     |
 |------:|-------------|---------------|
  
-- pedido 
+### PEDIDO
 <br/>
 | id    | data_criacao | observacao | valor_frete | valor_total | client_id |
 |------:|--------------|------------|-------------|-------------|-----------|
@@ -56,7 +56,7 @@ A chave estrangeira possibilita que as tabelas possuam relacionamento, e essa ch
 > <ins>client_id</ins> indica que para cada pedido realizado pode está associado a um cliente.
 > Nesse exemplo acima, temos um relacionamento **many-to-one**, na direção de pedidos para cliente temos muitos pedidos diferentes estão associados a um cliente e na direção de cliente para pedidos temos **one-to-many**.
 
-- produto
+### Produto
 | id  |  nome | valor_unitario | quantidade_estoque |
 |----:|-------|----------------|--------------------|
 
