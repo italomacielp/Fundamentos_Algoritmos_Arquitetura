@@ -34,4 +34,36 @@ Serve para identificação de um registro de uma tabela (linha), e útil para re
 ## Schema
 Agrupa um conjunto de tabelas com um nome, serve para organização do banco de dados.
 
+## Relacionamentos
+A separação de tabelas é fundamental para uma base de dados, pois determina responsabilidades únicas para cada tabela, evita repetições de dados e complexidade de entidades. <br/>
+
+## Foreign Key
+A chave estrangeira possibilita que as tabelas possuam relacionamento, e essa chave normalmente é uma coluna que aponta para outra tabela. 
+<br/>
+
+### Exemplo
+|                  Cliente                |
+| id        |    nome     |     email     |
+|----------:|-------------|---------------|
+<br/>
+|                                    Pedido                                     |
+| id        | data_criacao | observacao | valor_frete | valor_total | client_id |
+|----------:|--------------|------------|-------------|-------------|-----------|
+
+> [!NOTE]
+> <ins>client_id</ins> indica que para cada pedido realizado pode está associado a um cliente.
+> Nesse exemplo acima, temos um relacionamento **many-to-one**, na direção de pedidos para cliente temos muitos pedidos diferentes estão associados a um cliente e na direção de cliente para pedidos temos **one-to-many**.
+<br/>
+
+|                     Produto                       |
+| id  |  nome | valor_unitario | quantidade_estoque |
+|----:|-------|----------------|--------------------|
+
+> [!NOTE]
+> Na visão de relacionamento entre produto e pedido, temos uma relação **many-to-many**, no qual um produto podem está em vários pedidos, como em um pedido pode ter vários produtos, logo para resolver isso criamos uma nova tabela indicando os <ins>id</ins> das tabelas.
+<br/>
+|                  item_pedido            |
+| pedido_id | produto_id |   quantidade   |
+|----------:|------------|----------------|
+<br/>
 

@@ -36,12 +36,12 @@ create table curso(
 -- Scripts de inserção para tabelas aluno, professor e curso --
 insert into academico.aluno(matricula, nome, situacao_academica, coeficiente_academico, periodo, curso) 
 values(20210094026, 'Ítalo Maciel de Paiva', 'ativo', 7.0, 13, 'Engenharia da Computação');
-insert into professor(nome, tipo_vinculo, email, titulacao) 
+insert into academico.professor(nome, tipo_vinculo, email, titulacao) 
 values('João', 'efetivo', 'joao@gmail.com', 'Mestre');
-insert into professor(nome, tipo_vinculo, email, titulacao) 
+insert into academico.professor(nome, tipo_vinculo, email, titulacao) 
 values('Maria', 'efetivo', 'maria@gmail.com', 'Doutorado');
-insert into curso(nome, turno, carga_horaria, grau, modalidade, objetivos)
-values('Engenharia da Computação', 'Matutino', 4200, 'Presencial', null);
+insert into academico.curso(nome, turno, carga_horaria, grau, modalidade, objetivos)
+values('Engenharia da Computação', 'Matutino', 4200, 'Bacharelado', 'Presencial', null);
 
 -- Consultas gerais --
 select * from academico.aluno;
