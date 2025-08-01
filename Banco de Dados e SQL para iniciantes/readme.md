@@ -42,11 +42,13 @@ A chave estrangeira possibilita que as tabelas possuam relacionamento, e essa ch
 <br/>
 
 ### Exemplo
-- cliente  
+- cliente
+<br/>  
 | id    |    nome     |     email     |
 |------:|-------------|---------------|
  
 - pedido 
+<br/>
 | id    | data_criacao | observacao | valor_frete | valor_total | client_id |
 |------:|--------------|------------|-------------|-------------|-----------|
 
