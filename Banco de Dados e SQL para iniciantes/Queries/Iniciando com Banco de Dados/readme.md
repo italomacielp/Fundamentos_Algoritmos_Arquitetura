@@ -7,3 +7,5 @@ Abaixo as imagens respectiva a modelagem, indicado os tipos de dados (colunas) a
 ![Tabela Professor](../../assets/img/professor.png) <br/>
 ![Tabela Curso](../../assets/img/curso.png) <br/>
 
+> [!NOTE]
+> Um usuário root (administrador) normalmente fica responsável na criação, manutenção e gerenciamento das bases de dados, como também definir usuários e suas respectivas permissões.
