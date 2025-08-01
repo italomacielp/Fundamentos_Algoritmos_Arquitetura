@@ -3,7 +3,7 @@ Para a realização desse desafio foi utilizada as ferramentas para modelagem do
 
 ## Modelagem dos dados
 Abaixo as imagens respectiva a modelagem, indicado os tipos de dados (colunas) associados a cada tabela.
-![Tabela Aluno](/assets/img/aluno.png)
-![Tabela Professor](/assets/img/professor.png)
-![Tabela Curso](/assets/img/curso.png)
+![Tabela Aluno](../assets/img/aluno.png)
+![Tabela Professor](../assets/img/professor.png)
+![Tabela Curso](../assets/img/curso.png)
 
