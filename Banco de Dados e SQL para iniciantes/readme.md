@@ -43,30 +43,28 @@ A chave estrangeira possibilita que as tabelas possuam relacionamento, e essa ch
 
 ### Exemplo
 ### CLIENTE
-<br/>  
+
 | id    |    nome     |     email     |
 |-------|-------------|---------------|
  
 ### PEDIDO
-<br/>
+
 | id    | data_criacao | observacao | valor_frete | valor_total | client_id |
 |-------|--------------|------------|-------------|-------------|-----------|
+
+### PRODUTO
+
+| id  |  nome | valor_unitario | quantidade_estoque |
+|-----|-------|----------------|--------------------|
+
+### ITEM PEDIDO
+
+| pedido_id | produto_id |   quantidade   |
+|-----------|------------|----------------|
+<br/>
 
 > [!NOTE]
 > <ins>client_id</ins> indica que para cada pedido realizado pode está associado a um cliente.
 > Nesse exemplo acima, temos um relacionamento **many-to-one**, na direção de pedidos para cliente temos muitos pedidos diferentes estão associados a um cliente e na direção de cliente para pedidos temos **one-to-many**.
-
-### PRODUTO
-<br/>
-| id  |  nome | valor_unitario | quantidade_estoque |
-|-----|-------|----------------|--------------------|
-
-> [!NOTE]
 > Na visão de relacionamento entre produto e pedido, temos uma relação **many-to-many**, no qual um produto podem está em vários pedidos, como em um pedido pode ter vários produtos, logo para resolver isso criamos uma nova tabela indicando os <ins>id</ins> das tabelas.
-
-### ITEM PEDIDO
-<br/>
-| pedido_id | produto_id |   quantidade   |
-|-----------|------------|----------------|
-<br/>
 
