@@ -49,7 +49,7 @@ A chave estrangeira possibilita que as tabelas possuam relacionamento, e essa ch
  
 ### PEDIDO
 
-| id    | data_criacao | observacao | valor_frete | valor_total | client_id |
+| id    | data_criacao | observacao | valor_frete | valor_total | cliente_id |
 |-------|--------------|------------|-------------|-------------|-----------|
 
 ### PRODUTO
@@ -67,4 +67,44 @@ A chave estrangeira possibilita que as tabelas possuam relacionamento, e essa ch
 > <ins>client_id</ins> indica que para cada pedido realizado pode está associado a um cliente.
 > Nesse exemplo acima, temos um relacionamento **many-to-one**, na direção de pedidos para cliente temos muitos pedidos diferentes estão associados a um cliente e na direção de cliente para pedidos temos **one-to-many**.
 > Na visão de relacionamento entre produto e pedido, temos uma relação **many-to-many**, no qual um produto podem está em vários pedidos, como em um pedido pode ter vários produtos, logo para resolver isso criamos uma nova tabela indicando os <ins>id</ins> das tabelas.
+<br/>
+
+## Cláusula Where
+A sua finalidade é para realizar um filtro em consultas com base em restrições para as colunas.
+
+### Exemplo:
+```
+SELECT * FROM pedido
+    WHERE observacao IS NOT NULL
+```
+<br/>
+
+> [!NOTE]
+> Seleciona todos os pedidos na qual retorna somente com observações preenchidas com alguma informação.
+
+## Projeção 
+Possibilita filtrar somente algumas informações das tabelas selecionadas na consulta. <br/>
+
+### Exemplo:
+```
+SELECT c.nome p FROM pedido p,
+    cliente c
+    where c.id = p.cliente_id
+    and p.valor_total >= 50.00
+```
+
+## Trabalhando com datas
+Existem algumas funções auxiliares:
+<br/>
+> A função **now()** serve para retornar a data e hora atual no momento da execução da script.
+> A função **month()** retorna o mês de uma data passada por parâmetro.
+> A função **year()** retorna o ano de uma data passada por parâmetro.
+> A função **day()** retorna o dia de uma data passada por parâmetro.
+
+## Síntaxe de Alteração de Tabela
+<pre> ```
+alter table nome_tabela
+    add column nome_coluna tipo_dado not null default
+    drop column nome_coluna
+``` </pre>
 

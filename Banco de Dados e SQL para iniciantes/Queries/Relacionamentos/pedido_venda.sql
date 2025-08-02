@@ -36,8 +36,42 @@ create table pedido_venda.item_pedido (
       references produto(id)
 ) engine=InnoDB;
 
+-- Inserção de registros em produto, item_pedido, pedido --
 insert into pedido_venda.produto(nome, valor_unitario, quantidade_estoque)
   values('Cola Super', 20.50, 300);
-  
 insert into pedido_venda.item_pedido(pedido_id, produto_id, quantidade)
   values(3,1,2);
+insert into pedido_venda.produto(nome, valor_unitario, quantidade_estoque)
+values('Papel A4', 12.00, 100);
+insert into pedido_venda.pedido(data_criacao, data_entrega, valor_frete, valor_total,
+cliente_id) values('2014-07-11 15:22:00', '2014-07-15', 33.00, 400.00, 2);
+insert into pedido_venda.item_pedido(pedido_id, produto_id, quantidade)
+values(4,1,4);
+insert into pedido_venda.item_pedido(pedido_id, produto_id, quantidade)
+values(4,2,2);
+
+-- A consulta realiza um produto cartesiano, no qual pode retornar valores repetidos --
+select * from pedido_venda.pedido, pedido_venda.cliente;
+
+-- A consulta só retorna registros que possuam chave estrangeira --
+select * from pedido_venda.pedido p, pedido_venda.cliente c
+	where p.cliente_id = c.id;
+    
+insert into pedido_venda.pedido(data_criacao, data_entrega, valor_frete,
+valor_total, cliente_id)
+values(now(), '2014-08-24', 10.00, 100.00, 1);
+
+alter table pedido_venda.pedido
+	add column forma_pagamento varchar(50) not null;
+    
+alter table pedido_venda.pedido
+	add column status varchar(20) not null default 'ORÇAMENTO';
+
+insert into pedido_venda.pedido(data_criacao, data_entrega, valor_total, cliente_id,
+forma_pagamento)
+values(now(), '2014-08-25', 20, 1, 'DINHEIRO');
+    
+insert into pedido_venda.pedido(data_criacao, data_entrega, valor_total, cliente_id,
+forma_pagamento, status)
+values(now(), '2014-08-25', 20, 1, 'DINHEIRO', 'CANCELADO');
+
