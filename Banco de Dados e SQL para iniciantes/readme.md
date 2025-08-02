@@ -108,3 +108,24 @@ alter table nome_tabela
     drop column nome_coluna
 ``` </pre>
 
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>João Silva</td>
+      <td>joao@email.com</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Ana Costa</td>
+      <td>ana@email.com</td>
+    </tr>
+  </tbody>
+</table>
